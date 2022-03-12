@@ -1,24 +1,36 @@
-# README
+# <good unknown place>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+<カフェを中心とした穴場スポットを投稿できるSNS>
 
-Things you may want to cover:
+### サイトテーマ
+<穴場スポットを共有>
 
-* Ruby version
+### テーマを選んだ理由
+<コロナによりダメージを受けている飲食店があり、
+また感染対策をしながら外食を楽しみたいという人もいます。
+そこで「穴場スポット」つまり混雑を避けられる場所を共有することができれば、
+利用者は感染対策をしながら楽しく飲食ができ、
+飲食店側も客数が徐々に増え良い循環になるのではないかと思い、
+このテーマにしました。>
 
-* System dependencies
+### ターゲットユーザ
+<カフェ巡りが趣味の人、混雑を避けて飲食したい人>
 
-* Configuration
+### 主な利用シーン
+<特にランチタイムなど、
+駅近くは混雑しやすいので穴場スポットを見つけて休憩したり、
+未開の地を開拓するワクワク感もあります。>
 
-* Database creation
+## 設計書
+<...>
 
-* Database initialization
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1EXKRXR68NP3Vy0RDMj1Nexj0oMBgutRIbo0vYS9dZC4/edit?usp=sharing>
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
