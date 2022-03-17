@@ -19,3 +19,10 @@
  </div>
 <% end %>
 <%= paginate @posts %>
+
+<h5>いいね一覧</h5>
+<% if @like_list.present? %>
+  <% @like_list.each do |post| %>
+     <p><%= post.name %></p>
+  <% end %>
+<% end %>
