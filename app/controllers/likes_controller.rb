@@ -13,4 +13,7 @@ class LikesController < ApplicationController
     like.destroy
     redirect_to post_path(post)
   end
+  
+  def index
+  end
 end
