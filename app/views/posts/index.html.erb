@@ -1,29 +1,27 @@
 <div class="container">
-<%= render 'posts/info', posts: @posts %>
-投稿一覧
-
-<% @posts.each do |post| %>
- <div>
-   <p><%= post.name %></p>
-   <%= link_to post_path(post.id) do %>
-    <p><%= attachment_image_tag post, :image, format: 'jpeg', size: "300x300" %></p>
-   <% end %>
-   <p>投稿ユーザー : <%= post.user.name %></p>
-   <% if post.liked_by?(current_user) %>
-    <p>
-      <%= link_to post_likes_path(post), method: :delete do %>
-        ♥<%= post.likes.count %> いいね
+ <div class="row">
+  <div class="col-2">
+   <%= render 'posts/info', posts: @posts %>
+  </div>
+  <div class="col-10">
+     <div class="d-flex justify-content-around flex-wrap">
+      <% @posts.each do |post| %>
+       <div class="shadow p-3 mb-5 bg-white rounded">
+         <p><%= post.name %></p>
+         <%= link_to post_path(post.id) do %>
+           <p><%= attachment_image_tag post, :image, format: 'jpeg', size: "250x250" %></p>
+         <% end %>
+         <p>投稿ユーザー : <%= post.user.name %></p>
+         <% if post.liked_by?(current_user) %>
+           <p><%= link_to post_likes_path(post), method: :delete do %>♥<%= post.likes.count %> いいね <% end %></p>
+          <% else %>
+           <p><%= link_to post_likes_path(post), method: :post do %> ♡<%= post.likes.count %> いいね <% end %></p>
+         <% end %>
+          <%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %>
+       </div>
       <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to post_likes_path(post), method: :post do %>
-        ♡<%= post.likes.count %> いいね
-      <% end %>
-    </p>
-  <% end %>
-   <p><%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %></p>
+     </div>
+  </div>
+  <%= paginate @posts %>
  </div>
-<% end %>
-<%= paginate @posts %>
 </div>

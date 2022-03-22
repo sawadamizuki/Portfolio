@@ -1,11 +1,31 @@
-<h2>プロフィール編集</h2>
-<%= form_with model:@user, local:true do |f| %>
-  <label for="inputName">ユーザー名</label>
-  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60 %>
-  <label for="inputImage">アイコン</label>
-  <%= f.attachment_field :profile_image, placeholder: "アイコン" %>
-  <label for="inputImage">自己紹介</label>
-  <%= f.text_field :introduction %>
-  <%= f.submit "変更を保存" %>
-<% end %>
+<div class="row">
+  <div class="col-2">
+   <%= render 'posts/info', posts: @posts %>
+  </div>
+  <div class="col-2">
+    <p><%= attachment_image_tag @user, :profile_image, :fill, 170, 170, class: "rounded-circle" %></p>
+    <center><%= @user.name %></center>
+  </div>
+  <div class="col-8">
+    <%= form_with model:@user, local:true do |f| %>
+    <div class="row">
+      <label for="Name" class="col-2 col-form-label">ユーザー名</label>
+      <div class="col-10">
+        <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
+      </div>
+    </div>
+    <div class="row">
+      <label for="Image" class="col-2 col-form-label">アイコン</label>
+      <div class="col-10">
+        <%= f.attachment_field :profile_image, placeholder: "アイコン" %>
+      </div>
+    </div>
+    <div class="row">
+      <label for="Intoroduction" class="col-2 col-form-label">自己紹介</label>
+      <div class="col-10">
+        <%= f.text_field :introduction %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,19 +1,29 @@
-<%= render 'posts/info', posts: @posts %>
-<h4>お気に入りの穴場スポットが見つかる</h4>
-
-<p>新着投稿</p>
-
-<% @posts.each do |post| %>
- <div>
-   <p><%= post.name %></p>
-   <% if user_signed_in? %>
-     <%= link_to post_path(post.id) do %>
-      <p><%= attachment_image_tag post, :image, format: 'jpeg', size: "200x200" %></p>
-     <% end %>
-    <% else %>
-      <p><%= attachment_image_tag post, :image, format: 'jpeg', size: "200x200" %></p>
-   <% end %>
-   <p>投稿ユーザー : <%= post.user.name %></p>
+<!--topページ-->
+<div class="container">
+ <div class="row">
+  <div class="col-md-2">
+   <%= render 'posts/info', posts: @posts %>
+  </div>
+  <div class="col-10">
+   <center><h4>お気に入りの穴場スポットが見つかる</h4></center>
+   <hr>
+   <p>新着投稿</p>
+    <div class="d-flex justify-content-around">
+      <% @posts.each do |post| %>
+       <div class="one-post">
+         <p><%= post.name %></p>
+          <% if user_signed_in? %>
+           <%= link_to post_path(post.id) do %>
+            <p><%= attachment_image_tag post, :image, format: 'jpeg', size: "200x200" %></p>
+           <% end %>
+          <% else %>
+             <p><%= attachment_image_tag post, :image, format: 'jpeg', size: "200x200" %></p>
+          <% end %>
+         <p>投稿ユーザー : <%= post.user.name %></p>
+       </div>
+      <% end %>
+    </div>
+     <%= paginate @posts %>
+  </div>
  </div>
-<% end %>
-<%= paginate @posts %>
+</div>
