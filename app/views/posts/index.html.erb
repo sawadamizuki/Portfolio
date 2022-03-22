@@ -4,7 +4,7 @@
    <%= render 'posts/info', posts: @posts %>
   </div>
   <div class="col-10">
-     <div class="d-flex justify-content-around flex-wrap">
+     <div class="d-flex justify-content-around flex-wrap mt-4">
       <% @posts.each do |post| %>
        <div class="shadow p-3 mb-5 bg-white rounded">
          <p><%= post.name %></p>
