@@ -4,35 +4,33 @@
    <%= render 'posts/info', posts: @posts %>
   </div>
   <div class="col-10">
-    <div class="row">
-      <h4>新規投稿</h4>
-    </div>
+      <div class="row d-flex justify-content-center mt-3"><h3>新規投稿</h3></div>
      <%= form_with model: @post, url:'/posts', local:true do |f| %>
-     <div class="row">
+     <div class="row mt-4">
       <label for="image" class="col-2 col-form-label">画像</label>
       <div class="col-10">
         <%= f.attachment_field :image %>
       </div>
      </div>
-     <div class="row">
+     <div class="row mt-4">
        <label for="name" class="col-2 col-form-label">ショップ名</label>
        <div class="col-10">
         <%= f.text_field :name %>
        </div>
      </div>
-     <div class="row">
+     <div class="row mt-4">
        <label for="address" class="col-2 col-form-label">住所</label>
        <div class="col-10">
         <%= f.text_field :address %>
        </div>
      </div>
-     <div class="row">
+     <div class="row mt-4">
        <label for="introduction" class="col-2 col-form-label">お店の紹介</label>
        <div class="col-10">
         <%= f.text_area :introduction %>
        </div>
      </div>
-     <center><%= f.submit '投稿' %></center>
+     <center><%= f.submit '投稿する', class: "btn btn-warning" %></center>
      <% end %>
     </div>
   </div>

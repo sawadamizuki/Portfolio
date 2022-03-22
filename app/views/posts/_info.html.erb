@@ -6,6 +6,8 @@
   <div class="pt-3 pb-3"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "fa-solid fa-right-from-bracket" %></div>
  <% else %>
   <div class="pt-3 pb-3"></div>
+  <div class="pt-3 pb-3"><%= link_to "トップ", root_path, class: "fa-solid fa-angles-right" %></div>
   <div class="pt-3 pb-3"><%= link_to "新規登録", new_user_registration_path, class: "fa-solid fa-user-plus" %></div>
+  <div class="pt-3 pb-3"><%= link_to "サイトについて", about_path, class: "fa-solid fa-circle-question" %></div>
   <div class="pt-3 pb-3"><%= link_to "ログイン", new_user_session_path, class: "fa-solid fa-right-to-bracket" %></div>
 <% end %>

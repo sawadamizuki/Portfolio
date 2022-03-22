@@ -1,4 +1,19 @@
-<h1>お気に入りの穴場スポットがきっと見つかる</h1>
-
-<p>投稿の詳細を見る・いいね・コメントには会員登録が必要です。</p>
-<p>新規会員登録はこちら</p>
+<div class="container">
+ <div class="row">
+  <div class="col-md-2">
+   <%= render 'posts/info', posts: @posts %>
+  </div>
+  <div class="col-10">
+    <div class="row d-flex justify-content-center mt-4"><h1>お気に入りの穴場スポットが見つかる</h1></div>
+   <hr>
+   <div class="row d-flex justify-content-center mt-4">
+       居心地の良い、素敵な空間が見つかります
+   </div>
+   <div class="row d-flex justify-content-center mt-4">
+       オススメのお店はシェアしましょう
+   </div>
+   <div class="row d-flex justify-content-center mt-4">
+       <p style="border-bottom: solid 2px red;">投稿の詳細を見る・いいね・コメントには会員登録が必要です</p>
+   </div>
+</div>
+</div>

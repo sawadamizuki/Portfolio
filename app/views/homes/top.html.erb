@@ -5,12 +5,12 @@
    <%= render 'posts/info', posts: @posts %>
   </div>
   <div class="col-10">
-   <center><h4>お気に入りの穴場スポットが見つかる</h4></center>
+    <div class="row d-flex justify-content-center mt-4"><h4>お気に入りの穴場スポットが見つかる</h4></div>
    <hr>
-   <p>新着投稿</p>
-    <div class="d-flex justify-content-around">
+   <h4>新着投稿</h4>
+    <div class="d-flex justify-content-around mt-3">
       <% @posts.each do |post| %>
-       <div class="one-post">
+       <div class="shadow p-3 mb-5 bg-white rounded">
          <p><%= post.name %></p>
           <% if user_signed_in? %>
            <%= link_to post_path(post.id) do %>

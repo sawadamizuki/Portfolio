@@ -3,13 +3,22 @@
  <div class="row">
   <div class="col-md-2"><%= render 'posts/info', posts: @posts %></div>
   <div class="col-md-10">
-　　<div>
-　　 <p><%= attachment_image_tag @user, :profile_image, :fill, 70, 70, format: 'jpeg', class: "rounded-circle" %>
-　　 <%= @user.name %>
-　　 <% if @user.id == current_user.id %>
-      <%= link_to "プロフィール編集", edit_user_path(@user) %>
-     <% end %>
-     <%= @user.introduction %>
+    <div class="row d-flex justify-content-center mt-3"><h3>マイページ</h3></div>
+　　<div class="row">
+　　  <div class="col-1"><%= attachment_image_tag @user, :profile_image, :fill, 85, 85, format: 'jpeg', class: "rounded-circle" %></div>
+　　  <div class="col">
+　　    <div class="row">
+　　      <h4><%= @user.name %></h4>
+　　      <div class="d-flex justify-content-end">
+　　       <% if @user.id == current_user.id %>
+            <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-warning" %>
+           <% end %>
+           </div>
+　　    </div>
+　　    <div class="row">
+　　      <%= @user.introduction %>
+　　    </div>
+　　  </div>
 　　</div>
     <hr>
 　　<div class="row">

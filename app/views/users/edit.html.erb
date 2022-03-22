@@ -1,12 +1,13 @@
-<div class="row">
+<div class="container">
+ <div class="row">
   <div class="col-2">
    <%= render 'posts/info', posts: @posts %>
   </div>
-  <div class="col-2">
+  <div class="col-3 mt-5">
     <p><%= attachment_image_tag @user, :profile_image, :fill, 170, 170, class: "rounded-circle" %></p>
-    <center><%= @user.name %></center>
+    <h3><%= @user.name %></h3>
   </div>
-  <div class="col-8">
+  <div class="col mt-5">
     <%= form_with model:@user, local:true do |f| %>
     <div class="row">
       <label for="Name" class="col-2 col-form-label">ユーザー名</label>
@@ -14,17 +15,20 @@
         <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-3 mb-2">
       <label for="Image" class="col-2 col-form-label">アイコン</label>
       <div class="col-10">
         <%= f.attachment_field :profile_image, placeholder: "アイコン" %>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-3 mb-2">
       <label for="Intoroduction" class="col-2 col-form-label">自己紹介</label>
       <div class="col-10">
         <%= f.text_field :introduction %>
       </div>
+    </div>
+    <div class="row mt-4">
+      <%= f.submit '更新する', class: "btn btn-warning"%>
     </div>
     <% end %>
   </div>
